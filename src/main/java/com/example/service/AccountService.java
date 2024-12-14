@@ -1,25 +1,25 @@
 package com.example.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.entity.Account;
+
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import com.example.entity.Account;
-import com.example.repository.AccountRepository;
-import com.example.repository.MessageRepository;
+public interface AccountService {
 
-@Service
-public class AccountService {
-    private AccountRepository accountRepository; 
-    private MessageRepository messageRepository;
+    List<Account> getAllAccounts();
 
-    @Autowired
-    public AccountService(MessageRepository messageRepository, AccountRepository accountRepository){
-        this.accountRepository = accountRepository;
-        this.messageRepository = messageRepository;
-    }
+    Account getAccountById(Integer id);
 
-    public Account registerUser(AccountRepository newUser){
-        return accountRepository.save(newUser);
-    }
+    Account saveAccount(Account account);
+
+    Account updateAccount(Integer id, Account account);
+
+    void deleteAccount(Integer id);
+
+    Account getAccountByUsername(String username);
+
+    Account authenticate(String username, String password);
 
 }

@@ -3,9 +3,11 @@ package com.example.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.entity.Account;
 import com.example.service.AccountService;
 import com.example.service.MessageService;
 
@@ -16,15 +18,5 @@ import com.example.service.MessageService;
  * refer to prior mini-project labs and lecture materials for guidance on how a controller may be built.
  */
 @RestController
-@RequestMapping("/register")
 public class SocialMediaController {
-    //Services for handling buisness logic
-    @Autowired
-    private AccountService accountService;
-    @Autowired
-    private MessageService messageService;
-
-    @PostMapping("/register")
-    public ResponseEntity<String> registerUser
-    
 }
